@@ -2,9 +2,9 @@ from fastapi import APIRouter, HTTPException, Depends, Request
 from fastapi.responses import RedirectResponse
 from authlib.integrations.starlette_client import OAuth
 from sqlmodel import Session, select
-from core.config import engine
-from models.user import User
-from core.security import create_access_token
+from Backend.app.core.config import engine
+from Backend.app.models.user import User
+from Backend.app.core.security import create_access_token
 import os
 from dotenv import load_dotenv
 from pathlib import Path

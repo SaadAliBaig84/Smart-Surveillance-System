@@ -2,9 +2,9 @@ from fastapi import APIRouter, HTTPException, Depends, Request
 from fastapi.responses import JSONResponse
 from pydantic import BaseModel, EmailStr
 from sqlmodel import Session, select, Field
-from core.config import engine
-from models.user import User
-from core.security import hash_password, verify_password, create_access_token
+from Backend.app.core.config import engine
+from Backend.app.models.user import User
+from Backend.app.core.security import hash_password, verify_password, create_access_token
 from jose import jwt, JWTError
 import os
 from dotenv import load_dotenv

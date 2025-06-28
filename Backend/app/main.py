@@ -1,9 +1,11 @@
 from fastapi import FastAPI
 from contextlib import asynccontextmanager
 from sqlmodel import SQLModel
-from core.config import engine
-from models.user import User
-from api.endpoints import auth, auth_google
+from Backend.app.core.config import engine
+from Backend.app.models.user import User
+from Backend.app.models.faces import RegisteredFace, FaceEmbedding
+from Backend.app.models.videos import VideoUpload
+from Backend.app.api.endpoints import auth, auth_google, register_face, video_upload, process_video
 from fastapi.middleware.cors import CORSMiddleware
 from starlette.middleware.sessions import SessionMiddleware
 from pathlib import Path
@@ -40,3 +42,7 @@ def root():
 # Include the authentication router
 app.include_router(auth.router, prefix="/auth")
 app.include_router(auth_google.router, prefix="/auth/google")
+app.include_router(register_face.router, prefix="/auth")
+app.include_router(video_upload.router, prefix="/auth")
+app.include_router(process_video.router, prefix="/auth")
+

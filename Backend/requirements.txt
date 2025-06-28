@@ -10,3 +10,10 @@ psycopg2-binary
 email-validator
 bcrypt==3.2.0
 authlib
+insightface>=0.7.3
+onnxruntime>=1.12.1        # For CPU inference
+opencv-python>=4.5.5.64    # For image and video handling
+httpx
+itsdangerous
+python-multipart
+ultralytics
