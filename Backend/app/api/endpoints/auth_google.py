@@ -63,7 +63,7 @@ async def google_callback(request: Request):
 
         # Create access token
         access_token = create_access_token(data={"sub": str(user.id)})
-        response = RedirectResponse(url=os.getenv("FRONTEND_REDIRECT_AFTER_LOGIN"))
+        response = RedirectResponse(url=f"{os.getenv("FRONTEND_REDIRECT_AFTER_LOGIN")}?token={access_token}")
         response.set_cookie(key="access_token", value=access_token, httponly=True, secure=False, samesite="Lax", max_age=3600)
         return response
     

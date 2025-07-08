@@ -19,6 +19,7 @@ export default function ProfileDropdown({ userData, loading }) {
         { withCredentials: true }
       );
       if (response.status === 200) {
+        sessionStorage.removeItem("access_token");
         setAuthenticated(false);
         navigate("/");
       }
@@ -42,19 +43,13 @@ export default function ProfileDropdown({ userData, loading }) {
 
   return (
     <div className="relative" ref={dropdownRef}>
-      {/* <img
-        src={user?.profilePic || "/default-avatar.png"} // fallback image
-        alt="Profile"
-        className="w-10 h-10 rounded-full cursor-pointer border border-gray-600"
-        onClick={() => setOpen(!open)}
-      /> */}
       <User
         onClick={() => setOpen(!open)}
         className="w-10 h-10 rounded-full cursor-pointer border border-orange-600 p-1 shadow-[0_0_10px_rgba(255,115,0,0.7)]"
       ></User>
 
       {open && (
-        <div className="absolute flex flex-col justify-center items-center right-0 mt-2 bg-gray-800 w-md text-white rounded-lg shadow-lg z-50">
+        <div className="absolute flex flex-col justify-center items-center right-0 mt-2 bg-gray-800 w-md text-white rounded-lg shadow-lg z-50 sm:w-72 md:w-80 max-w-[90vw]">
           <div className=" px-4 py-3 border-b border-gray-700 text-sm font-semibold">
             {loading ? (
               <Loader className="w-5 h-5 animate-spin align-middle" />

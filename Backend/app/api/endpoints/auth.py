@@ -55,7 +55,7 @@ def signup(data: SignupInput):
             content={
                 "message": "User registered successfully",
                 "user_id": new_user.id,
-                "access_token": TokenResponse(access_token=access_token).model_dump_json()
+                "access_token": TokenResponse(access_token=access_token).model_dump()
             },
             status_code=201
         )
@@ -81,7 +81,7 @@ def login(data: LoginInput):
             content={
                 "message": "User logged in successfully",
                 "user_id": user.id,
-                "access_token": TokenResponse(access_token=access_token).model_dump_json()
+                "access_token": TokenResponse(access_token=access_token).model_dump()
             },
             status_code=200
         )

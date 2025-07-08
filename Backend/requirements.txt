@@ -1,5 +1,5 @@
 fastapi
-uvicorn
+uvicorn[standard]
 sqlmodel
 pydantic
 sqlalchemy
@@ -17,3 +17,5 @@ httpx
 itsdangerous
 python-multipart
 ultralytics
+huggingface_hub
+groq

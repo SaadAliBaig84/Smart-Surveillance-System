@@ -8,3 +8,23 @@ body,
   margin: 0;
   background-color: black;
 }
+/* global.css */
+.scanlines {
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(255, 115, 0, 0.03),
+    rgba(255, 115, 0, 0.03) 2px,
+    transparent 2px,
+    transparent 4px
+  );
+  animation: scanmove 12s linear infinite;
+}
+
+@keyframes scanmove {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 100%;
+  }
+}
