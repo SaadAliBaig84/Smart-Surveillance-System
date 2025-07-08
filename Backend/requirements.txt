@@ -17,5 +17,4 @@ httpx
 itsdangerous
 python-multipart
 ultralytics
-huggingface_hub
 groq
