@@ -85,10 +85,7 @@ export default function LoginForm({
 
       <GoogleButton label="Continue with Google" />
 
-      <div className="flex justify-between text-sm text-gray-400 mt-6">
-        <button type="button" className="hover:text-orange-400">
-          Forgot Password?
-        </button>
+      <div className="flex justify-center text-sm text-gray-400 mt-6">
         <div>
           Don't have an account?{" "}
           <button

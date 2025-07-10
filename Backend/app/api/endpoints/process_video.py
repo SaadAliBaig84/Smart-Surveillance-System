@@ -61,7 +61,7 @@ def process_frame(frame, known_embeddings, threshold=0.4, frame_idx=0, fps=30):
         #     continue
         detected_faces.append(identity)
         cv2.rectangle(frame, (x1,y2), (x2,y2), (0,255,0), 2)
-        cv2.putText(frame, f"{identity}", (x1,y1-10), cv2.FONT_HERSHEY_SIMPLEX,0.5, (0,255,0), 1 )
+        cv2.putText(frame, f"{identity}", (x1,y1-10), cv2.FONT_HERSHEY_SIMPLEX,2, (0,255,0), 2 )
     
     fire_detected = False
     smoke_detected = False
@@ -82,7 +82,7 @@ def process_frame(frame, known_embeddings, threshold=0.4, frame_idx=0, fps=30):
             color = (0, 0, 255) if label=="fire" else (255,0,0)
             cv2.rectangle(frame, (int(x1), int(y1)), (int(x2), int(y2)), color, 2)
             cv2.putText(frame, f"{label} {conf:.2f}", (int(x1), int(y1) - 5),
-                        cv2.FONT_HERSHEY_SIMPLEX, 0.5, color, 1)
+                        cv2.FONT_HERSHEY_SIMPLEX, 2, color, 2)
 
     seconds = frame_idx / fps
     timestamp = str(datetime.timedelta(seconds=int(seconds)))

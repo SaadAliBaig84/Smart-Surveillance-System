@@ -16,7 +16,7 @@ export default function AnalysisViewer({ summaryData }) {
       ref={containerRef}
     >
       <h2 className="text-orange-400 font-semibold mb-2 text-lg">
-        🧠 AI Surveillance Summary
+        Surveillance Summary
       </h2>
 
       <ul className="space-y-1 text-sm">

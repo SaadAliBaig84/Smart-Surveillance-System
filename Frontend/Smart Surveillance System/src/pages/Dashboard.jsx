@@ -50,9 +50,7 @@ export default function Dashboard() {
   const [isUploadingVideo, setIsUploadingVideo] = useState(false);
   const [StreamURL, setStreamURL] = useState(null);
   const [faceName, setFaceName] = useState("");
-  const [analysisMode, setAnalysisModeState] = useState(() => {
-    return sessionStorage.getItem("analysisMode") === "true";
-  });
+  const [analysisMode, setAnalysisModeState] = useState(false);
   const faceInputRef = useRef();
   const videoInputRef = useRef();
   const [userData, setUserData] = useState(null);
@@ -82,7 +80,6 @@ export default function Dashboard() {
   }, []);
   const setAnalysisMode = (mode) => {
     setAnalysisModeState(mode);
-    sessionStorage.setItem("analysisMode", mode);
   };
 
   const handleFaceUpload = async () => {
